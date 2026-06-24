@@ -4,8 +4,8 @@ import gsap from 'gsap';
 import ThemeToggle from './ThemeToggle';
 
 const links = [
-  { label: 'Work', href: '#work' },
   { label: 'About', href: '#about' },
+  { label: 'Work', href: '#work' },
   { label: 'Stack', href: '#stack' },
   { label: 'Contact', href: '#contact' },
 ];
@@ -19,9 +19,16 @@ const socials = [
 
 export default function Nav() {
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const overlayRef = useRef(null);
   const linkRefs = useRef([]);
   const tl = useRef(null);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 40);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
 
   useEffect(() => {
     const overlay = overlayRef.current;
@@ -54,7 +61,7 @@ export default function Nav() {
 
   return (
     <>
-      <nav>
+      <nav className={scrolled ? 'scrolled' : ''}>
         <a href="#" className="nav-logo">Anees.</a>
         <div className="nav-right">
           <ThemeToggle />

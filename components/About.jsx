@@ -33,7 +33,7 @@ export default function About() {
       </div>
       <div>
         <p className="about-text" ref={textRef}>
-          I&apos;m a developer and designer who builds <em>clean digital experiences</em> — from product interfaces to full-stack apps. I care about the details: motion, typography, and code that scales.
+          I build <em>clean, scalable applications</em> — from robust back-end systems to polished front-end interfaces. I care about the details: performance, architecture, and code that lasts.
           <br /><br />
           Based in Pakistan, working globally.
         </p>

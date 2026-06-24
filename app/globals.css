@@ -91,6 +91,18 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  background: transparent;
+  transition: background 0.4s ease, backdrop-filter 0.4s ease, border-color 0.4s ease;
+  border-bottom: 1px solid transparent;
+}
+
+nav.scrolled {
+  background: color-mix(in srgb, var(--bg) 82%, transparent);
+  backdrop-filter: blur(20px) saturate(1.6);
+  -webkit-backdrop-filter: blur(20px) saturate(1.6);
+  border-bottom-color: var(--border);
+  box-shadow: 0 1px 0 0 color-mix(in srgb, var(--fg) 6%, transparent),
+              0 4px 24px -4px color-mix(in srgb, var(--bg) 60%, transparent);
 }
 
 .nav-logo {
@@ -604,6 +616,16 @@ nav {
   display: block;
 }
 
+/* Dark mode: invert black → white */
+[data-theme="dark"] .tech-item-icon img.invert {
+  filter: invert(1);
+}
+
+/* Light mode: no filter needed */
+[data-theme="light"] .tech-item-icon img {
+  filter: invert(0);
+}
+
 .tech-item:hover .tech-item-icon {
   border-color: var(--accent);
   background: var(--bg-card);
@@ -738,7 +760,7 @@ footer {
 
 @keyframes marquee {
   from { transform: translateX(0); }
-  to   { transform: translateX(-50%); }
+  to   { transform: translateX(-33.333%); }
 }
 
 /* ── Responsive ───────────────────────────────────── */

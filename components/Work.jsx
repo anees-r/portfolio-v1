@@ -7,36 +7,41 @@ gsap.registerPlugin(ScrollTrigger);
 
 const projects = [
   {
-    name: 'Enterprise ERP System',
-    desc: 'Full-stack ERP for a logistics company — modules for inventory, HR, payroll and reporting.',
-    tags: ['Next.js', 'Node.js', 'PostgreSQL', 'Oracle'],
+    name: 'HMIS - Shifa Int. Hospitals',
+    desc: 'Core billing and operations platform powering critical transactions.',
+    tags: ['React', 'Express.js', 'Oracle'],
     private: true,
   },
   {
-    name: 'Mobile Banking App',
-    desc: 'Cross-platform Flutter app with real-time transaction tracking and biometric auth.',
-    tags: ['Flutter', 'Firebase', 'Node.js'],
+    name: 'Panel ChargeMaster - Shifa Int. Hospitals',
+    desc: 'System for managing hospital-organizational panels and pricing.',
+    tags: ['React', 'Express.js', 'Oracle'],
     private: true,
   },
   {
-    name: 'Circular Gallery',
-    desc: 'Experiment in GSAP-driven circular motion layouts with interactive image reveals.',
-    tags: ['Next.js', 'GSAP', 'CSS'],
-    href: 'https://circular-animated-gallery.vercel.app/',
+    name: 'Cash ChargeMaster - Shifa Int. Hospitals',
+    desc: 'System for managing hospital services, packages and pricing.',
+    tags: ['React', 'Express.js', 'Oracle'],
+    private: true,
+  },
+  {
+    name: 'CRM & HRMS - Nova Communications',
+    desc: 'Telecom-scale customer and employee management system.',
+    tags: ['CodeIgniter', 'PostgreSQL'],
+    private: true,
+  },
+  {
+    name: 'HRMS Migration - Nayatel',
+    desc: 'Migrated and optimized queries from Oracle to PostgreSQL.',
+    tags: ['CodeIgniter', 'Oracle', 'PostgreSQL', 'Optimization'],
+    private: true,
+  },
+  {
+    name: 'Buckit - Personal',
+    desc: 'Personal finance tracker with income and expense logging.',
+    tags: ['Next.js', 'PostgreSQL', 'Zod', 'Prisma'],
+    href: 'https://mybuckit.vercel.app/',
     private: false,
-  },
-  {
-    name: 'Slide Menu',
-    desc: 'Minimal full-screen slide-in navigation with staggered GSAP link animations.',
-    tags: ['Next.js', 'GSAP', 'Motion'],
-    href: 'https://slide-animated-menu.vercel.app/',
-    private: false,
-  },
-  {
-    name: 'CodeIgniter CMS',
-    desc: 'Custom content management system built in CodeIgniter 4 with role-based access.',
-    tags: ['CodeIgniter', 'PHP', 'MySQL'],
-    private: true,
   },
 ];
 

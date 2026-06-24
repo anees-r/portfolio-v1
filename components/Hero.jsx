@@ -30,7 +30,7 @@ export default function Hero() {
           <span className="hero-name-line italic" ref={line2Ref}>Rehman</span>
         </h1>
         <p className="hero-sub" ref={subRef}>
-          Full-Stack Developer &nbsp;·&nbsp; UI/UX Designer
+          Full-Stack Developer
         </p>
       </div>
 

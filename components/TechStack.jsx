@@ -155,7 +155,14 @@ export default function TechStack() {
             style={{ left: `${t.x}%`, top: `${t.y}%` }}
           >
             <div className="tech-item-icon">
-              {logos[t.key]}
+              <img
+                src={`/icons/techstack/${t.key}.svg`}
+                alt={t.name}
+                width={24}
+                height={24}
+                className={['nextjs','express'].includes(t.key) ? 'invert' : ''}
+                style={{ width: '100%', height: '100%', objectFit: 'contain' }}
+              />
             </div>
             <span className="tech-item-name">{t.name}</span>
             <span className="tech-proficiency">{t.level}</span>
@@ -169,7 +176,13 @@ export default function TechStack() {
             style={{ left: `${t.x}%`, top: `${t.y}%` }}
           >
             <div className="tech-item-icon">
-              {logos[t.key]}
+              <img
+                src={`/icons/techstack/${t.key}.svg`}
+                alt={t.name}
+                width={24}
+                height={24}
+                style={{ width: '100%', height: '100%', objectFit: 'contain' }}
+              />
             </div>
             <span className="tech-item-name">{t.name}</span>
             <span className="tech-proficiency">{t.level}</span>
