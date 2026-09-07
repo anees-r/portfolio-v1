@@ -43,6 +43,13 @@ const projects = [
     href: 'https://mybuckit.vercel.app/',
     private: false,
   },
+  {
+    name: 'Folizen - Personal',
+    desc: 'Books and reads tracker (with KoReader Plugin).',
+    tags: ['Next.js', 'PostgreSQL', 'Drizzle'],
+    href: 'https://folizen.vercel.app/',
+    private: false,
+  },
 ];
 
 export default function Work() {

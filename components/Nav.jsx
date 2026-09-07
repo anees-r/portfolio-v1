@@ -13,7 +13,6 @@ const links = [
 const socials = [
   { label: 'GitHub', href: 'https://github.com/anees-r' },
   { label: 'LinkedIn', href: 'https://www.linkedin.com/in/anees-r/' },
-  { label: 'Behance', href: 'https://www.behance.net/anees101' },
   { label: 'Mail', href: 'mailto:anees.dev2002@gmail.com' },
 ];
 
