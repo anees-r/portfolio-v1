@@ -2,7 +2,7 @@
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 
-export default function Hero() {
+export default function Hero({ greeting, firstName, lastName, subtitle }) {
   const greetingRef = useRef(null);
   const line1Ref = useRef(null);
   const line2Ref = useRef(null);
@@ -23,14 +23,14 @@ export default function Hero() {
     <section className="hero">
       <div className="hero-content">
         <div className="hero-greeting" ref={greetingRef} style={{ transform: 'translateY(8px)' }}>
-          Hello, I&apos;m
+          {greeting}
         </div>
         <h1 className="hero-name">
-          <span className="hero-name-line" ref={line1Ref}>Anees</span>
-          <span className="hero-name-line italic" ref={line2Ref}>Rehman</span>
+          <span className="hero-name-line" ref={line1Ref}>{firstName}</span>
+          <span className="hero-name-line italic" ref={line2Ref}>{lastName}</span>
         </h1>
         <p className="hero-sub" ref={subRef}>
-          Full-Stack Developer
+          {subtitle}
         </p>
       </div>
 

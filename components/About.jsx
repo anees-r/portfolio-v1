@@ -3,9 +3,14 @@ import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
+import { renderParagraphs } from '@/lib/accent-text';
+
 gsap.registerPlugin(ScrollTrigger);
 
-export default function About() {
+export default function About({ text, location, email }) {
+  // Location reads as the closing line, unless the about text already mentions it.
+  const body = location && !text.includes(location) ? `${text}\n\n${location}` : text;
+
   const sectionRef = useRef(null);
   const textRef = useRef(null);
 
@@ -33,11 +38,9 @@ export default function About() {
       </div>
       <div>
         <p className="about-text" ref={textRef}>
-          I build <em>clean, scalable applications</em> — from robust back-end systems to polished front-end interfaces. I care about the details: performance, architecture, and code that lasts.
-          <br /><br />
-          Based in Pakistan, working globally.
+          {renderParagraphs(body)}
         </p>
-        <a href="mailto:anees.dev2002@gmail.com" className="about-cta">
+        <a href={email ? `mailto:${email}` : '#contact'} className="about-cta">
           Get in touch ↗
         </a>
       </div>

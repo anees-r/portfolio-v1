@@ -1,10 +1,11 @@
-export default function Footer() {
+export default function Footer({ name, socials }) {
   return (
     <footer>
-      <p className="footer-copy">© 2025 Anees Rehman</p>
+      <p className="footer-copy">© 2025 {name}</p>
       <div className="footer-socials">
-        <a href="https://github.com/anees-r" className="footer-social" target="_blank" rel="noreferrer">GitHub</a>
-        <a href="https://www.linkedin.com/in/anees-r/" className="footer-social" target="_blank" rel="noreferrer">LinkedIn</a>
+        {socials.filter(s => !s.isMail).map(s => (
+          <a key={s.id} href={s.href} className="footer-social" target="_blank" rel="noreferrer">{s.label}</a>
+        ))}
       </div>
     </footer>
   );

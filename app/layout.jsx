@@ -6,13 +6,6 @@ import { ThemeProvider } from "@/components/ThemeContext";
 export const metadata = {
   title: "Anees Rehman — Full Stack Developer",
   description: "Full-stack developer crafting clean digital experiences and problem solutions.",
-  icons: {
-    icon: [
-      { url: '/favicon.svg', type: 'image/svg+xml' },
-      { url: '/favicon.ico', sizes: '32x32' },
-    ],
-    apple: { url: '/favicon.svg', type: 'image/svg+xml' },
-  },
 };
 
 export default function RootLayout({ children }) {

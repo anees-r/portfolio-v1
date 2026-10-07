@@ -1,13 +1,8 @@
 'use client';
 import { useEffect, useRef } from 'react';
 
-export default function Marquee() {
+export default function Marquee({ items: baseItems }) {
   const trackRef = useRef(null);
-
-  const baseItems = [
-    'Full-Stack', 'Development', 'Clean Code', 'React', 'Next.js',
-    'Express.js', 'Node.js', 'PostgreSQL', 'Oracle', 'UI/UX',
-  ];
 
   const items = [...baseItems, ...baseItems];
 
@@ -31,6 +26,8 @@ export default function Marquee() {
     raf = requestAnimationFrame(animate);
     return () => cancelAnimationFrame(raf);
   }, []);
+
+  if (!baseItems.length) return null;
 
   return (
     <div className="marquee-section">

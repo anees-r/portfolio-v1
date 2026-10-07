@@ -10,13 +10,7 @@ const links = [
   { label: 'Contact', href: '#contact' },
 ];
 
-const socials = [
-  { label: 'GitHub', href: 'https://github.com/anees-r' },
-  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/anees-r/' },
-  { label: 'Mail', href: 'mailto:anees.dev2002@gmail.com' },
-];
-
-export default function Nav() {
+export default function Nav({ firstName, socials }) {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const overlayRef = useRef(null);
@@ -61,7 +55,7 @@ export default function Nav() {
   return (
     <>
       <nav className={scrolled ? 'scrolled' : ''}>
-        <a href="#" className="nav-logo">Anees.</a>
+        <a href="#" className="nav-logo">{firstName && `${firstName}.`}</a>
         <div className="nav-right">
           <ThemeToggle />
           <button className="nav-menu-btn" onClick={() => setOpen(true)}>
@@ -92,7 +86,12 @@ export default function Nav() {
           <button className="menu-close" onClick={() => setOpen(false)}>✕ Close</button>
           <div className="menu-socials">
             {socials.map(s => (
-              <a key={s.label} href={s.href} className="menu-social" target="_blank" rel="noreferrer">
+              <a
+                key={s.id}
+                href={s.href}
+                className="menu-social"
+                {...(s.isMail ? {} : { target: '_blank', rel: 'noreferrer' })}
+              >
                 {s.label} ↗
               </a>
             ))}

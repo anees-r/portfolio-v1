@@ -3,9 +3,11 @@ import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
+import { renderAccent } from '@/lib/accent-text';
+
 gsap.registerPlugin(ScrollTrigger);
 
-export default function Contact() {
+export default function Contact({ headline, email }) {
   const sectionRef = useRef(null);
   const headlineRef = useRef(null);
 
@@ -30,11 +32,13 @@ export default function Contact() {
     <section className="contact" id="contact" ref={sectionRef}>
       <p className="contact-pre">Let&apos;s Work Together</p>
       <h2 className="contact-headline" ref={headlineRef}>
-        Say <em>Hello.</em>
+        {renderAccent(headline)}
       </h2>
-      <a href="mailto:anees.dev2002@gmail.com" className="contact-email">
-        anees.dev2002@gmail.com ↗
-      </a>
+      {email && (
+        <a href={`mailto:${email}`} className="contact-email">
+          {email} ↗
+        </a>
+      )}
     </section>
   );
 }
